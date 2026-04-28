@@ -22,9 +22,15 @@ public class PostController {
         return service.getAllPosts();
     }
 
-    // ✅ POST create new post
+    // ✅ POST create new post (UPDATED)
     @PostMapping
     public Post createPost(@RequestBody Post post) {
+
+        // 🔥 If role not sent, default = citizen
+        if (post.getRole() == null || post.getRole().isEmpty()) {
+            post.setRole("citizen");
+        }
+
         return service.savePost(post);
     }
 

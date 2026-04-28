@@ -13,14 +13,17 @@ public class Post {
     private String description;
     private String citizenName;
 
+    private String role; // ✅ ADD THIS
+
     public Post() {
     }
 
-    public Post(Long id, String title, String description, String citizenName) {
+    public Post(Long id, String title, String description, String citizenName, String role) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.citizenName = citizenName;
+        this.role = role;
     }
 
     public Long getId() {
@@ -53,5 +56,15 @@ public class Post {
 
     public void setCitizenName(String citizenName) {
         this.citizenName = citizenName;
+    }
+
+    // ✅ NEW GETTER & SETTER
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
